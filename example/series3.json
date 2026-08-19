@@ -1,0 +1,8 @@
+{
+  "type": "series",
+  "blocks": [
+    { "type": "unit", "name": "relay", "beta": 3.0, "eta": 12000 },
+    { "type": "unit", "name": "sensor", "beta": 1.5, "eta": 8000 },
+    { "type": "unit", "name": "actuator", "beta": 2.2, "eta": 15000 }
+  ]
+}

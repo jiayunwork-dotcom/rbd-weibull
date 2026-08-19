@@ -1,0 +1,13 @@
+{
+  "type": "series",
+  "blocks": [
+    {
+      "type": "parallel",
+      "blocks": [
+        { "type": "unit", "name": "pump-A", "beta": 1.8, "eta": 4500 },
+        { "type": "unit", "name": "pump-B", "beta": 1.8, "eta": 4500 }
+      ]
+    },
+    { "type": "unit", "name": "valve", "beta": 2.5, "eta": 20000 }
+  ]
+}

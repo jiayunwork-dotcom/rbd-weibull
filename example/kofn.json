@@ -1,0 +1,9 @@
+{
+  "type": "kofn",
+  "k": 2,
+  "blocks": [
+    { "type": "unit", "name": "pump-A", "beta": 1.8, "eta": 4500 },
+    { "type": "unit", "name": "pump-B", "beta": 1.8, "eta": 5000 },
+    { "type": "unit", "name": "pump-C", "beta": 2.0, "eta": 6000 }
+  ]
+}
