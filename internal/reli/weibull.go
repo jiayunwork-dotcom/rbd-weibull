@@ -13,7 +13,7 @@ func Reliability(t, beta, eta float64) float64 {
 	if t <= 0 {
 		return 1
 	}
-	return math.Exp(-math.Pow(t/eta, beta))
+	return math.Exp(-applyPow(t, beta, eta))
 }
 
 // Failure returns the unreliability F(t) = 1 - R(t).
