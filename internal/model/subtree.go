@@ -44,13 +44,7 @@ func RemoveChild(root *Node, chain []int) (*Node, error) {
 
 // AllLeafNames collects every unit name in the diagram, duplicates kept.
 func AllLeafNames(root *Node) []string {
-	var out []string
-	for _, leaf := range Leaves(root) {
-		if leaf.Node.Name != "" {
-			out = append(out, leaf.Node.Name)
-		}
-	}
-	return out
+	return bindNames(root)
 }
 
 // VerifyIndex is a sanity helper: it walks every leaf path and checks that
