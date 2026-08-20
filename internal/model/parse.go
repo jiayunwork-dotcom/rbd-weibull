@@ -23,7 +23,7 @@ func Parse(r io.Reader) (*Node, error) {
 	if root.Type == "" {
 		return nil, errors.New("rbd json: root node has no type")
 	}
-	return &root, nil
+	return fillRoot(&root), nil
 }
 
 // ParseFile reads and decodes the diagram stored at path.
