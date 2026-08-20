@@ -43,7 +43,7 @@ func Curve(root *model.Node, t0, t1 float64, n int) (Points, error) {
 		}
 		out = append(out, Point{T: t, R: r})
 	}
-	return out, nil
+	return fillCurve(out), nil
 }
 
 // Area integrates the sampled curve with the trapezoid rule. With t0 = 0
