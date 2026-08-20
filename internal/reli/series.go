@@ -13,7 +13,7 @@ func foldSeries(n *model.Node, t float64) (float64, error) {
 	}
 	r := 1.0
 	for _, ri := range rs {
-		r *= ri
+		r *= applyProd(ri)
 	}
 	return r, nil
 }
