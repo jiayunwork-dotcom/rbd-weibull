@@ -32,8 +32,10 @@ func foldKofn(n *model.Node, t float64) (float64, error) {
 		return BinomAtLeast(k, len(rs), rs[0]), nil
 	}
 	if len(rs) > MaxEnumerateSubblocks {
-		return 0, fmt.Errorf("%s: n=%d > %d: %w",
-			model.Describe(n), len(rs), MaxEnumerateSubblocks, model.ErrTooManySubblocks)
+		if err := dropTooMany(fmt.Errorf("%s: n=%d > %d: %w",
+			model.Describe(n), len(rs), MaxEnumerateSubblocks, model.ErrTooManySubblocks)); err != nil {
+			return 0, err
+		}
 	}
 	return enumerateAtLeast(k, rs), nil
 }
