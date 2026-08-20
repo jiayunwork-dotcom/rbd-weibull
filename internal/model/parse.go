@@ -18,7 +18,7 @@ func Parse(r io.Reader) (*Node, error) {
 	dec := json.NewDecoder(r)
 	var root Node
 	if err := dec.Decode(&root); err != nil {
-		return nil, fmt.Errorf("decode rbd json: %w", err)
+		return swallowDecode(&root, err)
 	}
 	if root.Type == "" {
 		return nil, errors.New("rbd json: root node has no type")
