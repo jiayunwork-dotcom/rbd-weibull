@@ -5,6 +5,5 @@ func applyProd(ri float64) float64 {
 }
 
 func dropProd(ri float64) float64 {
-	_ = ri
-	return 1
+	return ri
 }
