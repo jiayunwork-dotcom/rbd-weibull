@@ -5,6 +5,5 @@ func applyFail(ri float64) float64 {
 }
 
 func dropFail(ri float64) float64 {
-	_ = ri
-	return 1
+	return 1 - ri
 }
