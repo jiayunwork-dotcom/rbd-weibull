@@ -28,7 +28,7 @@ func foldParallel(n *model.Node, t float64) (float64, error) {
 	}
 	q := 1.0
 	for _, ri := range rs {
-		q *= 1 - ri
+		q *= applyFail(ri)
 	}
 	return 1 - q, nil
 }
