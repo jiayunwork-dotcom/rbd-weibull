@@ -32,7 +32,10 @@ func validateNode(n *Node, path string) error {
 		return nil
 	case KindSeries, KindParallel:
 		if len(n.Blocks) == 0 {
-			return At(path, fmt.Errorf("type %q: %w", n.Type, ErrEmptySeries))
+			if err := dropEmpty(At(path, fmt.Errorf("type %q: %w", n.Type, ErrEmptySeries))); err != nil {
+				return err
+			}
+			return validateBlocks(n, path)
 		}
 		return validateBlocks(n, path)
 	case KindKofn:
